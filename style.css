@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+h1, h2 {
+  margin: 10px 0;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+#todayMoon {
+  margin: 20px auto;
+}
+
+#sevenPanel {
+  margin-top: 20px;
+}
+
+#sevenGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.moonSVG {
+  width: 100px;
+  height: 100px;
+}
+
+.hidden {
+  display: none;
+}
