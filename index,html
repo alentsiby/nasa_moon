@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moon Phase Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌙 Moon Phase Tracker</h1>
+    <div id="todayPanel">
+      <h2>Today</h2>
+      <div id="todayMoon"></div>
+    </div>
+    <button id="toggle7">Next 7 Days</button>
+    <div id="sevenPanel" class="hidden">
+      <h2>Next 7 Days</h2>
+      <div id="sevenGrid"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
