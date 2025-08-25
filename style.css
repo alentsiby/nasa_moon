@@ -58,3 +58,9 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.phaseText {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #bbb;
+}
