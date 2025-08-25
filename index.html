@@ -1,53 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moon Phase – Today & Next 7 Days</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moon Phase Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Starfield (drawn locally) -->
-  <canvas id="sky" aria-hidden="true"></canvas>
-
-  <div class="wrap">
-    <header>
-      <h1>🌕 Moon Phase – Today & Next 7 Days</h1>
-      <div id="now" class="sub"></div>
-    </header>
-
-    <section class="panel today">
-      <div id="todayMoon"></div>
-      <div class="meta">
-        <div>
-          <div id="todayLabel" class="label"></div>
-          <div id="todayDate" class="date"></div>
-        </div>
-        <div class="kvs">
-          <div class="kv">
-            <div class="k">Illumination</div>
-            <div id="todayIllum" class="v"></div>
-          </div>
-          <div class="kv">
-            <div class="k">Age in cycle</div>
-            <div id="todayAge" class="v"></div>
-          </div>
-        </div>
-        <div class="actions">
-          <button id="toggle7">▶ Next 7 Days</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="sevenPanel" class="panel" style="display:none;">
-      <h2 class="subhead">Next 7 Days</h2>
-      <div class="grid7" id="grid7"></div>
-    </section>
-
-    <footer>
-      Built with a lightweight astronomical approximation (synodic month 29.5306 d). Images are generated locally (no APIs).
-    </footer>
+  <h1>🌙 Moon Phase Tracker</h1>
+  <div id="today">
+    <h2>Today</h2>
+    <canvas id="todayMoon" width="150" height="150"></canvas>
+    <p id="todayPhase"></p>
   </div>
+
+  <h2>Next 7 Days</h2>
+  <div id="forecast"></div>
 
   <script src="script.js"></script>
 </body>
