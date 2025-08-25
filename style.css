@@ -1,66 +1,100 @@
+/* ---------- GENERAL PAGE STYLE ---------- */
 body {
   margin: 0;
-  padding: 0;
-  background: #111;
-  color: #eee;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-}
-
-.container {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(ellipse at bottom, #0d1b2a, #000);
+  color: #f1f1f1;
   text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #f9f9f9;
+  text-shadow: 0 0 10px #fff;
+}
+
+h2 {
   margin-top: 30px;
+  font-size: 1.4rem;
+  color: #d4e2ff;
 }
 
-h1, h2 {
-  margin: 10px 0;
+/* ---------- MOON STYLE ---------- */
+.moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #dcdcdc);
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  margin: 0 auto 10px;
+  position: relative;
 }
 
-button {
+/* ---------- FORECAST GRID ---------- */
+#sevenPanel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 20px;
   margin: 20px;
+}
+
+.day-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  padding: 15px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* ---------- BUTTON ---------- */
+button {
   padding: 10px 20px;
-  font-size: 16px;
-  background: #333;
-  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
 }
 
 button:hover {
-  background: #555;
+  background: linear-gradient(90deg, #2a5298, #1e3c72);
 }
 
-#todayMoon {
-  margin: 20px auto;
+/* ---------- STARS BACKGROUND ---------- */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background: transparent url('https://i.ibb.co/VgB9bYr/stars.png') repeat;
+  z-index: -1;
+  animation: moveStars 100s linear infinite;
 }
 
-#sevenPanel {
-  margin-top: 20px;
-}
-
-#sevenGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  justify-items: center;
-  margin-top: 10px;
-}
-
-.moonSVG {
-  width: 100px;
-  height: 100px;
-}
-
-.hidden {
-  display: none;
-}
-
-.phaseText {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #bbb;
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 5000px; }
 }
