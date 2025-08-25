@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Moon Phase Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌙 Moon Phase Tracker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🌙 Moon Phase Tracker</h1>
-    <div id="todayPanel">
-      <h2>Today</h2>
-      <div id="todayMoon"></div>
-      <div id="todayText" class="phaseText"></div>
-    </div>
-    <button id="toggle7">Next 7 Days</button>
-    <div id="sevenPanel" class="hidden">
-      <h2>Next 7 Days</h2>
-      <div id="sevenGrid"></div>
-    </div>
-  </div>
+  <div class="stars"></div>
+  <h1>🌙 Moon Phase Tracker</h1>
+  
+  <h2>Today</h2>
+  <div class="moon"></div>
+  <div id="todayLabel" class="label"></div>
+
+  <button onclick="render7()">Next 7 Days</button>
+
+  <h2>Next 7 Days</h2>
+  <div id="sevenPanel"></div>
 
   <script src="script.js"></script>
 </body>
