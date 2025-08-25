@@ -23,14 +23,34 @@ h2 {
 }
 
 /* ---------- MOON STYLE ---------- */
+.moon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
 .moon {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff, #dcdcdc);
-  box-shadow: 0 0 20px rgba(255,255,255,0.8);
-  margin: 0 auto 10px;
+  background: #fff;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Shadow overlay to create phases */
+.moon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--shadow-left, 0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0d1b2a;
+  transform: translateX(var(--shadow-shift, 0));
+  transition: 0.5s ease;
 }
 
 /* ---------- FORECAST GRID ---------- */
