@@ -40,9 +40,22 @@ function moonPhasePercent(date){
   return phase;
 }
 
+// Return text label for phase
+function moonPhaseName(p){
+  if (p < 0.03 || p > 0.97) return "New Moon";
+  if (p < 0.22) return "Waxing Crescent";
+  if (p < 0.28) return "First Quarter";
+  if (p < 0.47) return "Waxing Gibbous";
+  if (p < 0.53) return "Full Moon";
+  if (p < 0.72) return "Waning Gibbous";
+  if (p < 0.78) return "Last Quarter";
+  return "Waning Crescent";
+}
+
 function renderToday(){
   const p = moonPhasePercent(new Date());
   document.getElementById("todayMoon").innerHTML = moonSVG(p);
+  document.getElementById("todayText").textContent = moonPhaseName(p);
 }
 
 function render7(){
@@ -54,7 +67,9 @@ function render7(){
     d.setDate(d.getDate()+i);
     const p = moonPhasePercent(d);
     const cell = document.createElement("div");
-    cell.innerHTML = moonSVG(p,80) + `<div>${d.toDateString().slice(0,10)}</div>`;
+    cell.innerHTML = moonSVG(p,80) 
+                   + `<div class="phaseText">${moonPhaseName(p)}</div>`
+                   + `<div>${d.toDateString().slice(0,10)}</div>`;
     grid.appendChild(cell);
   }
 }
